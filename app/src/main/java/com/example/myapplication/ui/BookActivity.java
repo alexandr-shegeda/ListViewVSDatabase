@@ -31,7 +31,5 @@ public class BookActivity extends ActionBarActivity
         bookDesc.setText( book.getDescription() );
         bookYear. setText(book.getYear());
         bookCover.setBackground(getApplicationContext().getResources().getDrawable(book.getImage()));
-
-
     }
 }

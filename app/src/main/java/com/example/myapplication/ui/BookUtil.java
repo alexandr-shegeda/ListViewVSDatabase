@@ -30,16 +30,17 @@ public class BookUtil
         list.add(new BookModel(14,"Book 14", "author 14","Some book description","1888",R.drawable.book_14));
         list.add(new BookModel(15,"Book 15", "author 15","Some book description","2001",R.drawable.book_15));
 
-        for(BookModel book : list) {
-            sqlHelper.addBook(new BookModel(
-                    book.getBookId(),
-                    book.getBookTitle(),
-                    book.getBookAuthor(),
-                    book.getDescription(),
-                    book.getYear(),
-                    book.getImage()));
+        if(sqlHelper.getAllBooks().size() == 0) {
+            for (BookModel book : list) {
+                sqlHelper.addBook(new BookModel(
+                        book.getBookId(),
+                        book.getBookTitle(),
+                        book.getBookAuthor(),
+                        book.getDescription(),
+                        book.getYear(),
+                        book.getImage()));
+            }
         }
-
         return sqlHelper.getAllBooks();
     }
 

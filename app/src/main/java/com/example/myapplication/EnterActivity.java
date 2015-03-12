@@ -1,19 +1,25 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.myapplication.repository.BookDatabaseHelper;
+
 
 public class EnterActivity extends ActionBarActivity {
+
+    private BookDatabaseHelper sqlHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
+        sqlHelper = new BookDatabaseHelper(this);
     }
 
 
@@ -49,5 +55,10 @@ public class EnterActivity extends ActionBarActivity {
     {
         Intent intent = new Intent(getBaseContext(),BookCreatorActivity.class);
         this.startActivity(intent);
+    }
+
+    public void dropTable(View view)
+    {
+        sqlHelper.deleteAll();
     }
 }

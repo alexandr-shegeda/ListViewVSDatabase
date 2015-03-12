@@ -20,7 +20,7 @@ public class BookDatabaseHelper extends SQLiteOpenHelper implements BaseColumns
 {
 
     private static final String DATABASE_NAME = "book_database.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     public static final String TABLE_NAME = "book_table";
     public static final String UID = "BookData_id";

@@ -22,4 +22,13 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:onClick="addNewBook" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drop table"
+        android:id="@+id/button4"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:onClick="dropTable" />
 </RelativeLayout>
