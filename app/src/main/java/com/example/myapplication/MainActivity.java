@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
@@ -13,10 +12,8 @@ import android.widget.ListView;
 import com.example.myapplication.repository.BookDatabaseHelper;
 import com.example.myapplication.ui.BookActivity;
 import com.example.myapplication.ui.BookAdapter;
-import com.example.myapplication.pojo.BookModel;
+import com.example.myapplication.ui.pojo.BookModel;
 import com.example.myapplication.ui.BookUtil;
-
-import java.io.File;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -38,9 +35,8 @@ public class MainActivity extends ActionBarActivity {
         });
 
         sqlHelper = new BookDatabaseHelper(this);
-        sdb = sqlHelper.getReadableDatabase();
 
-        BaseAdapter adapter = new BookAdapter(this, BookUtil.initList(sqlHelper,sdb));
+        BaseAdapter adapter = new BookAdapter(this, BookUtil.initList(sqlHelper));
         listView.setAdapter(adapter);
         BookUtil db = new BookUtil();
     }

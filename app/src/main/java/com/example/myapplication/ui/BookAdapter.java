@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.pojo.BookModel;
+import com.example.myapplication.ui.pojo.BookModel;
 
 import java.util.List;
 

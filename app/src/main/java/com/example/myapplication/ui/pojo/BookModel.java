@@ -1,16 +1,7 @@
-package com.example.myapplication.pojo;
+package com.example.myapplication.ui.pojo;
 
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.example.myapplication.R;
-
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Александр on 22.02.2015.

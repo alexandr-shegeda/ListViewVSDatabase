@@ -1,10 +1,7 @@
 package com.example.myapplication.ui;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.view.View;
 import com.example.myapplication.R;
-import com.example.myapplication.pojo.BookModel;
+import com.example.myapplication.ui.pojo.BookModel;
 import com.example.myapplication.repository.BookDatabaseHelper;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +11,7 @@ import java.util.List;
  */
 public class BookUtil
 {
-    public static List<BookModel> initList(BookDatabaseHelper sqlHelper,SQLiteDatabase sdb)
+    public static List<BookModel> initList(BookDatabaseHelper sqlHelper)
     {
         List<BookModel> list = new ArrayList<BookModel>();
         list.add(new BookModel(1,"Book 1", "author 1","Some book description","1890", R.drawable.book_1));
@@ -33,7 +30,17 @@ public class BookUtil
         list.add(new BookModel(14,"Book 14", "author 14","Some book description","1888",R.drawable.book_14));
         list.add(new BookModel(15,"Book 15", "author 15","Some book description","2001",R.drawable.book_15));
 
-        return list;
+        for(BookModel book : list) {
+            sqlHelper.addBook(new BookModel(
+                    book.getBookId(),
+                    book.getBookTitle(),
+                    book.getBookAuthor(),
+                    book.getDescription(),
+                    book.getYear(),
+                    book.getImage()));
+        }
+
+        return sqlHelper.getAllBooks();
     }
 
 }

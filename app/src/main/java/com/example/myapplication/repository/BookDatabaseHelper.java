@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.example.myapplication.pojo.BookModel;
+import com.example.myapplication.ui.pojo.BookModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +88,7 @@ public class BookDatabaseHelper extends SQLiteOpenHelper implements BaseColumns
         return book;
     }
 
-    public List<BookModel> getAllContacts() {
+    public List<BookModel> getAllBooks() {
         List<BookModel> contactList = new ArrayList<BookModel>();
         String selectQuery = "SELECT  * FROM " + TABLE_NAME;
 

@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.myapplication.pojo.BookModel;
+import com.example.myapplication.ui.pojo.BookModel;
 import com.example.myapplication.repository.BookDatabaseHelper;
 
 
@@ -54,7 +54,7 @@ public class BookCreatorActivity extends ActionBarActivity {
         EditText book_desc = (EditText) findViewById(R.id.txt_book_desc);
         EditText book_year = (EditText) findViewById(R.id.txt_book_year);
 
-        sqlHelper.addBook(new BookModel(Integer.parseInt(sqlHelper.UID),
+        sqlHelper.addBook(new BookModel(1,
                 book_title.getText().toString(),
                 book_author.getText().toString(),
                 book_desc.getText().toString(),
