@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
@@ -41,6 +42,17 @@ public class MainActivity extends ActionBarActivity {
         BaseAdapter adapter = new BookAdapter(this, BookUtil.initList(sqlHelper));
         listView.setAdapter(adapter);
         BookUtil db = new BookUtil();
+
+        // Get the intent, verify the action and get the query
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            getBookByYear(query);
+        }
+    }
+
+    private ListView getBookByYear(String query) {
+        return new ListView(this);
     }
 
     @Override
