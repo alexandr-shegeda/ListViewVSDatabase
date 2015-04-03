@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.repository;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.myapplication.R;
 import com.example.myapplication.ui.pojo.BookModel;
 import com.example.myapplication.repository.BookDatabaseHelper;
 

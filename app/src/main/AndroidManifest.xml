@@ -3,11 +3,17 @@
     package="com.example.myapplication"
     android:installLocation="internalOnly" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <provider
+            android:authorities="com.example.myapplication.repository.BookContentProvider"
+            android:name=".repository.BookContentProvider"></provider>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop" >
@@ -19,7 +25,7 @@
         </activity>
         <activity android:name=".ui.BookActivity" />
         <activity
-            android:name=".BookCreatorActivity"
+            android:name=".repository.BookCreatorActivity"
             android:banner="@drawable/ic_action_name" >
         </activity>
         <activity
