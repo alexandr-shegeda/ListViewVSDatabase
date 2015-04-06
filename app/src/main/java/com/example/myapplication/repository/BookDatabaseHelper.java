@@ -30,6 +30,10 @@ public class BookDatabaseHelper extends SQLiteOpenHelper implements BaseColumns
     public static final String BOOK_YEAR = "year";
     public static final String IMAGE_PATH = "imagePath";
 
+    public interface Tables {
+
+        String BOOKS = "book_table";
+    }
 
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE "
             + TABLE_NAME + " (" + UID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
